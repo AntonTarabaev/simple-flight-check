@@ -1,5 +1,5 @@
 .flight-item {
-  width: 560px;
+  width: 565px;
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -51,6 +51,7 @@
   }
 
   &__path {
+    font-size: 17px;
     font-weight: 300;
   }
 
@@ -76,12 +77,13 @@
   &__date {
     color: $gray;
     font-size: 14px;
+    line-height: 20px;
     font-weight: 400;
   }
 
   &__time {
     position: relative;
-    margin-left: 10px;
+    margin-left: 8px;
     padding-left: 19px;
 
     &::before {
@@ -108,7 +110,8 @@
   &__favorite {
     display: block;
     margin-left: auto;
-    margin-bottom: 22px;
+    margin-right: 4px;
+    margin-bottom: 15px;
 
     background-color: transparent;
     border: none;
@@ -131,5 +134,17 @@
     &:focus {
       opacity: 0.5;
     }
+  }
+
+  &__price {
+    font-weight: 300;
+    font-size: 11px;
+  }
+
+  &__cost {
+    margin-left: 4px;
+
+    font-size: 17px;
+    font-weight: 400;
   }
 }

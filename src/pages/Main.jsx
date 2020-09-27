@@ -5,11 +5,14 @@ import FlightsScroll from '../components/FlightsScroll';
 const Main = () => {
   return (
     <article className="departure">
+      <h1 className="visually-hidden">Simple Flight Check app</h1>
       <div className="departure__head">
-        <h1 className="departure__title alt-font">
+        <h2 className="departure__title alt-font">
           Вылеты <span className="departure__direction">SVO - JFK</span>
-        </h1>
-        <button className="departure__calendar">07 июля 2020</button>
+        </h2>
+        <button className="departure__calendar" type="button">
+          07 июля 2020
+        </button>
       </div>
       <PromoSlider>
         <img width="164" height="149" src="img/promo-1.jpg" alt="Promo" />
@@ -69,7 +72,7 @@ const Main = () => {
             <span className="flight-item__carrier">Aeroflot</span>
           </div>
           <div className="flight-item__right">
-            <button className="flight-item__favorite flight-item__favorite--active">
+            <button className="flight-item__favorite flight-item__favorite--active" type="button">
               <svg
                 width="23"
                 height="20"

@@ -12,11 +12,11 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 24px;
+    margin-top: 10px;
   }
 
   &__title {
     display: flex;
-    margin-top: 10px;
 
     font-weight: 500;
     font-size: 32px;
@@ -26,7 +26,7 @@
   &__direction {
     position: relative;
     display: block;
-    padding-left: 33px;
+    padding-left: 30px;
     margin-left: 20px;
 
     &::before {
@@ -45,7 +45,8 @@
   &__calendar {
     position: relative;
     display: block;
-    padding-right: 40px;
+    padding-right: 36px;
+    margin-right: 3px;
 
     font-weight: 600;
     font-size: 25px;
@@ -88,6 +89,8 @@
   }
 
   &__favorite-count {
+    margin-left: 5px;
+
     color: $blue;
     font-weight: 500;
   }

@@ -2,13 +2,12 @@ import './scss/styles.scss';
 
 import React from 'react';
 import Main from './pages/Main';
+import SignIn from './pages/SignIn';
 
 const App = () => {
-  return (
-    <div className="App">
-      <Main />
-    </div>
-  );
+  const isAuthorized = true;
+
+  return <>{isAuthorized ? <Main /> : <SignIn />}</>;
 };
 
 export default App;
