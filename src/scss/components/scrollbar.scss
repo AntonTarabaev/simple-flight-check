@@ -1,0 +1,19 @@
+.scrollbar {
+  &__thumb {
+    background-color: $blue;
+    border-radius: inherit;
+
+    cursor: pointer;
+  }
+
+  &__track {
+    width: 2px !important;
+    height: 100%;
+    top: 2px;
+    bottom: 2px;
+    right: 2px;
+
+    background-color: #e7e7e7;
+    border-radius: 2px;
+  }
+}

@@ -1,0 +1,94 @@
+.departure {
+  width: 680px;
+  height: 895px;
+  padding: 55px 40px;
+  margin: 0 auto;
+
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    display: flex;
+    margin-top: 10px;
+
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  &__direction {
+    position: relative;
+    display: block;
+    padding-left: 33px;
+    margin-left: 20px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 11px;
+      height: 20px;
+
+      background: url('../../assets/img/triangle.svg') center no-repeat;
+    }
+  }
+
+  &__calendar {
+    position: relative;
+    display: block;
+    padding-right: 40px;
+
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 28px;
+    color: $blue;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+    user-select: none;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+
+      width: 22px;
+      height: 24px;
+
+      background-image: url('../../assets/img/calendar.svg');
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+
+  &__favorite {
+    margin-top: 27px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+
+  &__favorite-count {
+    color: $blue;
+    font-weight: 500;
+  }
+}

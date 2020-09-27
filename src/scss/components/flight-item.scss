@@ -1,0 +1,135 @@
+.flight-item {
+  width: 560px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin: 0 20px 20px 19px;
+  padding-bottom: 17px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    left: -7px;
+    bottom: 0;
+    width: calc(100% + 7px);
+    height: 1px;
+
+    background-color: rgba(135, 135, 135, 0.2);
+    border-radius: 8px;
+  }
+
+  &__left {
+    position: relative;
+    padding-left: 88px;
+
+    &::after {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 64px;
+      height: 64px;
+      background-color: rgba(0, 119, 255, 0.05);
+      border-radius: 50%;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 35px;
+      height: 35px;
+      background: url('../../assets/img/plane.svg') center no-repeat;
+    }
+  }
+
+  &__path {
+    font-weight: 300;
+  }
+
+  &__arrival {
+    position: relative;
+    padding-left: 24px;
+    margin-left: 12px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+
+      width: 14px;
+      height: 10px;
+
+      background: url('../../assets/img/arrow.svg') center no-repeat;
+    }
+  }
+
+  &__date {
+    color: $gray;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__time {
+    position: relative;
+    margin-left: 10px;
+    padding-left: 19px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 9px;
+      height: 1px;
+
+      background-color: #c4c4c4;
+      border-radius: 2px;
+    }
+  }
+
+  &__carrier {
+    color: $gray;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+
+  &__favorite {
+    display: block;
+    margin-left: auto;
+    margin-bottom: 22px;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+    user-select: none;
+
+    &--active {
+      path {
+        fill: #f04393;
+        stroke: #f04393;
+      }
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+}

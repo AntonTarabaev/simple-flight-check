@@ -1,11 +1,12 @@
 import './scss/styles.scss';
 
 import React from 'react';
+import Main from './pages/Main';
 
 const App = () => {
   return (
     <div className="App">
-      <h1 style={{ fontWeight: '300' }}>Hello # > dkfolasdf /$} dfsfasdfasd !%^&*#&$#@#(@)$</h1>
+      <Main />
     </div>
   );
 };

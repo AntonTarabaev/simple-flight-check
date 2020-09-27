@@ -14,10 +14,11 @@ body {
   position: relative;
   min-width: 320px;
   min-height: 100vh;
+  padding: 65px 0 40px 0;
 
-  font-family: 'SF Pro Text', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 17px;
+  font-family: 'SF Pro Text', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 22px;
   font-weight: 300;
   color: $black;
 
@@ -43,6 +44,7 @@ a {
 }
 
 img {
+  vertical-align: top;
   max-width: 100%;
   height: auto;
 }
@@ -71,4 +73,8 @@ textarea {
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.alt-font {
+  font-family: Roboto, 'SF Pro Text', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 }
