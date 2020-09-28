@@ -5,7 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import FlightItem from '../components/FlightItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { declOfNum } from '../utils/main';
-import { loadData, setFlights, setLoadedStatus } from '../actions/data';
+import { loadData, setLoadedStatus } from '../actions/data';
 import Loader from '../components/Loader';
 import { LoadedStatus } from '../constants/main';
 import ServerError from '../components/ServerError';
@@ -33,7 +33,6 @@ const Main = () => {
 
   React.useEffect(() => {
     return () => {
-      dispatch(setFlights());
       dispatch(setLoadedStatus(LoadedStatus.NEVER));
     };
   }, [dispatch]);

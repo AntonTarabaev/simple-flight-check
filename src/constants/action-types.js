@@ -1,6 +1,8 @@
 export const UserActionTypes = {
   SET_USER_DATA: 'user/SET_USER_DATA',
   SAVE_FAVORITE: 'user/SAVE_FAVORITE',
+  CHECK_AUTH: 'user/CHECK_AUTH',
+  LOGOUT: 'user/LOGOUT',
 };
 
 export const DataActionTypes = {

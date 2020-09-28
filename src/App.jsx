@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <>
-      {!userData ? (
+      {userData ? (
         <>
           <LogoutBtn />
           <Main />
