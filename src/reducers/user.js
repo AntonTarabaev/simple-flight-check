@@ -13,6 +13,21 @@ const user = (state = initialState, action) => {
         userData: action.payload,
       };
 
+    case UserActionTypes.SAVE_FAVORITE:
+      const newFavorites = state.favoriteFlights.slice();
+      const searchIndex = newFavorites.findIndex((it) => it === action.payload);
+
+      if (searchIndex === -1) {
+        newFavorites.push(action.payload);
+      } else {
+        newFavorites.splice(searchIndex, 1);
+      }
+
+      return {
+        ...state,
+        favoriteFlights: newFavorites,
+      };
+
     default:
       return state;
   }
