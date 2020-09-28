@@ -22,6 +22,10 @@ const Main = () => {
   const dispatch = useDispatch();
   const [selectedDate, selectDate] = React.useState(tomorrowDate);
 
+  const onCalendarClick = React.useCallback((date) => {
+    selectDate(date);
+  }, []);
+
   React.useEffect(() => {
     dispatch(setLoadedStatus(LoadedStatus.LOADING));
     dispatch(loadData(selectedDate));
@@ -42,7 +46,7 @@ const Main = () => {
           Вылеты <span className="departure__direction">SVO - JFK</span>
         </h2>
         <div className="departure__calendar-block">
-          <FlightDatePicker selectDate={selectDate} selectedDate={selectedDate} />
+          <FlightDatePicker onCalendarClick={onCalendarClick} selectedDate={selectedDate} />
         </div>
       </div>
       <PromoSlider />
