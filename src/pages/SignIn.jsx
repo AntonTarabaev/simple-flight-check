@@ -19,7 +19,7 @@ const SignIn = () => {
     setEmailValidity(isCurrentEmailValid);
     setPasswordState(isCurrentPasswordValid);
 
-    if (isCurrentPasswordValid && isCurrentEmailValid) {
+    if (isCurrentPasswordValid === PasswordStatus.OK && isCurrentEmailValid) {
       dispatch(
         setUserData({
           email: evt.target.user_email.value,
