@@ -1,6 +1,6 @@
 import { DataActionTypes } from '../constants/action-types';
 
-export const setFlights = (flights) => ({
+export const setFlights = (flights = []) => ({
   type: DataActionTypes.SET_FLIGHTS,
   payload: flights,
 });
