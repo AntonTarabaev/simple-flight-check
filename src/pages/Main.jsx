@@ -1,8 +1,20 @@
 import React from 'react';
 import PromoSlider from '../components/PromoSlider';
 import FlightsScroll from '../components/FlightsScroll';
+import DatePicker, { registerLocale } from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import ru from 'date-fns/locale/ru';
+registerLocale('ru', ru);
 
 const Main = () => {
+  const [selectedDate, selectDate] = React.useState(new Date());
+
+  const CalendarBtn = ({ value, onClick }) => (
+    <button className="departure__calendar-btn" type="button" onClick={onClick}>
+      {value}
+    </button>
+  );
+
   return (
     <article className="departure">
       <h1 className="visually-hidden">Simple Flight Check app</h1>
@@ -10,9 +22,19 @@ const Main = () => {
         <h2 className="departure__title alt-font">
           Вылеты <span className="departure__direction">SVO - JFK</span>
         </h2>
-        <button className="departure__calendar" type="button">
-          07 июля 2020
-        </button>
+        <div className="departure__calendar-block">
+          <DatePicker
+            dateFormat="dd MMMM yyyy"
+            locale="ru"
+            selected={selectedDate}
+            onChange={(date) => {
+              console.log(date);
+              selectDate(date);
+            }}
+            minDate={new Date()}
+            customInput={<CalendarBtn />}
+          />
+        </div>
       </div>
       <PromoSlider>
         <img width="164" height="149" src="img/promo-1.jpg" alt="Promo" />
