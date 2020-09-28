@@ -9,3 +9,8 @@ export const setLoadedStatus = (status) => ({
   type: DataActionTypes.SET_LOADED_STATUS,
   payload: status,
 });
+
+export const loadData = (data) => ({
+  type: DataActionTypes.LOAD_DATA,
+  payload: data,
+});

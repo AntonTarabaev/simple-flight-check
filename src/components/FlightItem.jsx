@@ -2,10 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveFavorite } from '../actions/user';
+import { formatAirlinesFroView, formatDateForView, formatTimeForView } from '../utils/main';
 
-const FlightItem = ({ id }) => {
+const FlightItem = ({
+  id,
+  airportFrom,
+  airportTo,
+  airlines,
+  cost,
+  cityFrom,
+  cityTo,
+  departureTime,
+}) => {
   const dispatch = useDispatch();
   const isFavorite = useSelector(({ user }) => user.favoriteFlights.includes(id));
+
+  const formattedAirlines = formatAirlinesFroView(airlines).slice(0, 2).join(', ');
 
   const onFavoriteClick = () => {
     dispatch(saveFavorite(id));
@@ -15,14 +27,18 @@ const FlightItem = ({ id }) => {
     <article className="flight-item">
       <div className="flight-item__left">
         <h3 className="flight-item__path">
-          <span className="flight-item__departure">Moscow (SVO)</span>
-          <span className="flight-item__arrival">New York City (JFK)</span>
+          <span className="flight-item__departure">
+            {cityFrom} ({airportFrom})
+          </span>
+          <span className="flight-item__arrival">
+            {cityTo === 'New York' ? `${cityTo} City` : cityTo} ({airportTo})
+          </span>
         </h3>
         <p className="flight-item__date">
-          28 June, 2020
-          <span className="flight-item__time">14:50</span>
+          {formatDateForView(departureTime)}
+          <span className="flight-item__time">{formatTimeForView(departureTime)}</span>
         </p>
-        <span className="flight-item__carrier">Aeroflot</span>
+        <span className="flight-item__carrier">{formattedAirlines}</span>
       </div>
       <div className="flight-item__right">
         <button
@@ -43,7 +59,7 @@ const FlightItem = ({ id }) => {
           </svg>
         </button>
         <p className="flight-item__price">
-          Price: <span className="flight-item__cost">23 924 ₽</span>
+          Price: <span className="flight-item__cost">{cost} ₽</span>
         </p>
       </div>
     </article>
@@ -51,7 +67,14 @@ const FlightItem = ({ id }) => {
 };
 
 FlightItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+  airportFrom: PropTypes.string.isRequired,
+  airportTo: PropTypes.string.isRequired,
+  cityFrom: PropTypes.string.isRequired,
+  cityTo: PropTypes.string.isRequired,
+  departureTime: PropTypes.string.isRequired,
+  cost: PropTypes.number.isRequired,
+  airlines: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
 export default FlightItem;
