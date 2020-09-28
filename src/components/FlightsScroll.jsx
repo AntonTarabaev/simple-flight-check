@@ -23,4 +23,6 @@ FlightsScroll.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
 };
 
-export default FlightsScroll;
+export default React.memo(FlightsScroll, (oldProps, newProps) => {
+  return oldProps.children.length === newProps.children.length;
+});

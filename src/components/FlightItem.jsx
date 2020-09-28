@@ -77,4 +77,4 @@ FlightItem.propTypes = {
   airlines: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
-export default FlightItem;
+export default React.memo(FlightItem);

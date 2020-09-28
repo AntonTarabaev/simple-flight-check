@@ -1,9 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Slider from 'react-slick';
+import { useSelector } from 'react-redux';
 
-const PromoSlider = ({ children }) => {
+const PromoSlider = () => {
   const sliderRef = React.useRef();
+  const promoPicsLinks = useSelector(({ data }) => data.promo);
 
   const settings = {
     arrows: false,
@@ -37,9 +38,9 @@ const PromoSlider = ({ children }) => {
       onMouseLeave={onSliderMouseLeave}
       className="slider">
       <Slider {...settings} ref={sliderRef}>
-        {children.map((it) => (
-          <div key={new Date() + Math.random()} className="slider__item">
-            {it}
+        {promoPicsLinks.map((it, i) => (
+          <div key={it + i} className="slider__item">
+            <img width="164" height="149" src={it} alt="Promo" />
           </div>
         ))}
       </Slider>
@@ -47,8 +48,4 @@ const PromoSlider = ({ children }) => {
   );
 };
 
-PromoSlider.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
-};
-
-export default PromoSlider;
+export default React.memo(PromoSlider);
