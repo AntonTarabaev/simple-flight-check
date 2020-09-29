@@ -54,7 +54,9 @@ const user = (state = initialState, action) => {
       return state;
 
     case UserActionTypes.LOGOUT:
-      localStorage.clear();
+      localStorage.removeItem('userData');
+      localStorage.removeItem('favoriteFlights');
+
       return initialState;
 
     default:
